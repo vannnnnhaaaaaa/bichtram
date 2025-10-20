@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".icon");
   const pages = document.querySelectorAll(".page");
+  
+
 
   console.log(sections);
   sections.forEach((element) => {
@@ -43,4 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     page.style.display = "block";
   }
+
+ const playBtn = document.getElementById("play-btn");
+const pauseBtn = document.getElementById("pause-btn");
+const audio = document.getElementById("my-audio");
+
+playBtn.addEventListener("click", () => {
+  audio.play(); // phát nhạc
+  playBtn.style.display = "none";  // ẩn nút play
+  pauseBtn.style.display = "inline"; // hiện nút pause
+});
+
+pauseBtn.addEventListener("click", () => {
+  audio.pause(); // dừng nhạc
+  pauseBtn.style.display = "none";  // ẩn nút pause
+  playBtn.style.display = "inline"; // hiện lại nút play
+});
+
+
 });
